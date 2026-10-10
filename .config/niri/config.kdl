@@ -1,4 +1,4 @@
-spawn-at-startup "swaybg" "-i" "/home/vedder/Pictures/wallpapers/jr/census.jpeg" "-m" "fill"
+spawn-at-startup "swaybg" "-i" "/home/vedder/Pictures/wallpapers/nature/sunsetcloud.png" "-m" "fill"
 input {
     keyboard {
         xkb {
