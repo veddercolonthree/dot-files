@@ -4,7 +4,7 @@
 
 PATH=$PATH:/home/vedder/coding/scripts
 # If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+#[[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -15,6 +15,8 @@ if [ "$TERM_PROGRAM" != "vscode" ]; then
 fi
 
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dot-files --work-tree=$HOME"
+alias dotfilesREADME="/usr/bin/git --git-dir=$HOME/dot-files --work-tree=$HOME/dot-files"
+
 alias niriconfig="vim ~/.config/niri/config.kdl"
 alias update="sudo pacman -Syu; sudo flatpak update; yay -Syu; sudo npm update"
 alias restartWaybar="pkill waybar; systemctl --user restart waybar.service"
