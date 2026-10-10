@@ -1,0 +1,88 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 20, // Waybar height (to be removed for auto height)
+    //"width": 1880, // Waybar width
+    "margin-top": 6,
+    "margin-left": 6,
+    "margin-right": 6,
+    "margin-bottom": -4,
+    "spacing": 10, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+	"niri/workspaces",
+	"mpris"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+	"memory",
+	"cpu",
+	"temperature",
+	"wireplumber",
+	"tray"
+    ],
+    "niri/workspaces": {
+        "format": "{value}",
+        "current-only": false
+    },
+
+    "niri/window": {
+        "format": "{title}"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 7,
+        "icons": {
+          "blueman": "bluetooth",
+          "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        }
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%I:%M - %b %d %Y}" // %b %d %Y  --Date formatting
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        // "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": " {temperatureC}°c",
+        "format-icons": ["", "", ""]
+    },
+    "wireplumber": {
+        "format": " {volume}%",
+        "format-muted": "",
+        "on-click": "pavucontrol",
+   	"scroll-step": 5
+    },
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
+    "mpris": {
+        "format": "{player_icon} {title} - {artist}",
+        "format-paused": "{status_icon} {title} - {artist}",
+        "title-len": 25,
+        "artist-len": 25,
+        "interval": 1,
+        "player-icons": {
+            "default": " ",
+	},
+	"status-icons": {
+		"paused": " "
+	},
+	"tooltip": false
+	// "ignored-players": ["firefox"]
+    }
+}
